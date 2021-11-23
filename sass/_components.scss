@@ -40,9 +40,30 @@
     font-size: clamp(1.3125rem, 1.1797rem + 0.625vw, 1.625rem);
 
     span {
-      font-size: 18px;
+      font-size: 1rem;
     }
   }
+}
+
+.splide__slide.splide__slide img {
+  border-radius: 1rem;
+  cursor: grab;
+}
+
+.splide__slide img:active {
+  cursor: grabbing;
+}
+
+.splide__arrow.splide__arrow {
+  background-color: var(--clr-main);
+}
+
+.splide__pagination__page.splide__pagination__page {
+  background-color: var(--clr-accent);
+}
+
+.splide__pagination__page.is-active.splide__pagination__page.is-active {
+  background-color: var(--clr-main);
 }
 
 @media screen and (min-width: 48rem) {
