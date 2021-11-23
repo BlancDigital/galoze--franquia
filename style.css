@@ -509,14 +509,18 @@ select {
 }
 .section-numbers h2 {
   margin-bottom: 2.6rem;
+  max-width: 13ch;
 }
 
 .section-franchises {
   display: grid;
   place-content: center;
 }
-.section-franchises .above-title {
-  margin: 0;
+.section-franchises .below-title {
+  margin-top: -0.65rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 2.6rem;
 }
 
 .section-gallery {
@@ -546,6 +550,7 @@ select {
 }
 .section-videos .video {
   width: 100%;
+  border: 0.25rem solid var(--clr-white);
 }
 .section-videos .title {
   margin-top: 0.325rem;
