@@ -69,6 +69,8 @@
 
   h2 {
     margin-bottom: 2.6rem;
+    // TODO: Ver como isso fica na tela do VItor
+    max-width: 13ch;
   }
 }
 
@@ -77,8 +79,11 @@
   display: grid;
   place-content: center;
 
-  .above-title {
-    margin: 0;
+  .below-title {
+    margin-top: -0.65rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 2.6rem;
   }
 }
 
@@ -116,6 +121,7 @@
 
   .video {
     width: 100%;
+    border: 0.25rem solid var(--clr-white);
   }
 
   .title {
