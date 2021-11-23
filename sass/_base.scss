@@ -364,6 +364,11 @@ select {
   }
 }
 
+.above-title {
+  font-size: var(--fs-500);
+  margin-bottom: 0.325rem;
+}
+
 .smile {
   display: inline-block;
   transform: rotateZ(90deg);
