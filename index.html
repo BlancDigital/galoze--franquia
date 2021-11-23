@@ -42,6 +42,12 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
+    <link
+      rel="preload"
+      href="./libs/lite-youtube/lite-yt-embed.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
 
     <!-- Fonts -->
     <link
@@ -189,7 +195,7 @@
     <section class="section-numbers">
       <div class="section-center">
         <p class="above-title">Agora vamos ao que interessa!</p>
-        <h2>VAI ALGUNS DADOS AI?</h2>
+        <h2>DADOS, DADOS E MAIS DADOS!</h2>
 
         <div class="cards">
           <!-- start of item -->
@@ -262,8 +268,8 @@
     <!-- SECTION FRANCHISES -->
     <section class="section-franchises">
       <div class="section-center">
-        <p class="above-title">Ainda com a gente?</p>
-        <h2>SOBRE AS FRANQUIAS AGORA!</h2>
+        <p class="above-title">Sem perder o foco, hein?!</p>
+        <h2>NOSSOS MODELOS DE FRANQUIA!</h2>
 
         <p>Trabalhos com três modelos de franquia</p>
         <div class="slide"></div>
@@ -302,7 +308,45 @@
 
     <!-- SECTION KNOW-HOW -->
 
+    <!-- SECTION VIDEOS -->
+    <section class="section-videos">
+      <div class="section-center">
+        <p class="above-title">Tá inseguro ainda?</p>
+        <h2>Relaxa, somos famosinhos!!</h2>
+        <p class="below-title">
+          E não, eles não aceitam qualquer um nesses programas
+          <span class="smile">:)</span>
+        </p>
+
+        <div class="flex">
+          <!-- start of video item -->
+          <div class="container">
+            <lite-youtube
+              videoid="9bRlEVbkhFQ"
+              playlabel="Play: Keynote (Google I/O '18)"
+              class="video"
+              style="background-image: url(./public/images/video-2.jpg)"
+            ></lite-youtube>
+            <p class="title">Estivemos no The Chef!</p>
+          </div>
+          <!-- end of video item -->
+          <!-- start of video item -->
+          <div class="container">
+            <lite-youtube
+              videoid="vu99a0rupe4"
+              playlabel="Play: Keynote (Google I/O '18)"
+              class="video"
+              style="background-image: url(./public/images/video-1.jpg)"
+            ></lite-youtube>
+            <p class="title">Estivemos no Jogo Aberto!</p>
+          </div>
+          <!-- end of video item -->
+        </div>
+      </div>
+    </section>
+
     <script src="./main.js" async></script>
     <script src="./libs/splide-3.6.4/splide.min.js" defer></script>
+    <script src="./libs/lite-youtube/lite-ytb-embed.js" defer></script>
   </body>
 </html>
