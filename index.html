@@ -28,6 +28,21 @@
     <meta property="og:locale" content="pt_BR" />
     <meta name="theme-color" content="#a52a2a" />
 
+    <link
+      rel="preload"
+      href="./style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <!-- Splide lib -->
+    <link
+      rel="preload"
+      href="./libs/splide-3.6.4/splide.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
     <!-- Fonts -->
     <link
       rel="preload"
@@ -135,7 +150,6 @@
       crossorigin
     />
 
-    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -247,9 +261,48 @@
 
     <!-- SECTION FRANCHISES -->
     <section class="section-franchises">
-      <div class="section-center"></div>
+      <div class="section-center">
+        <p class="above-title">Ainda com a gente?</p>
+        <h2>SOBRE AS FRANQUIAS AGORA!</h2>
+
+        <p>Trabalhos com três modelos de franquia</p>
+        <div class="slide"></div>
+      </div>
+    </section>
+
+    <!-- SECTION GALLERY -->
+    <section class="section-gallery">
+      <div class="section-center">
+        <div class="above-title">Senhoras e senhores...</div>
+        <h2>As esperadas imagens!</h2>
+
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="./public/images/ft01.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="./public/images/ft02.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="./public/images/ft03.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="./public/images/ft04.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="./public/images/ft05.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECTION KNOW-HOW -->
+
+    <script src="./main.js" async></script>
+    <script src="./libs/splide-3.6.4/splide.min.js" defer></script>
   </body>
 </html>
