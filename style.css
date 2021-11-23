@@ -344,6 +344,11 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.above-title {
+  font-size: var(--fs-500);
+  margin-bottom: 0.325rem;
+}
+
 .smile {
   display: inline-block;
   transform: rotateZ(90deg);
@@ -473,9 +478,6 @@ select {
 .section-warning {
   min-height: 40vh;
 }
-.section-warning .above-title {
-  font-size: var(--fs-500);
-}
 .section-warning h2 span {
   color: var(--clr-white);
 }
@@ -505,10 +507,6 @@ select {
 .section-numbers {
   min-height: 90vh;
 }
-.section-numbers .above-title {
-  font-size: var(--fs-500);
-  margin-bottom: 0.325rem;
-}
 .section-numbers h2 {
   margin-bottom: 2.6rem;
 }
@@ -518,15 +516,51 @@ select {
   place-content: center;
 }
 .section-franchises .above-title {
-  font-size: var(--fs-500);
+  margin: 0;
 }
 
 .section-gallery {
   display: grid;
   place-content: center;
 }
+.section-gallery .above-title {
+  margin: 0;
+}
 .section-gallery h2 {
-  margin-bottom: 2.6rem;
+  margin-bottom: 1.3rem;
+}
+
+.section-videos .below-title {
+  margin-top: -0.325rem;
+  font-weight: 500;
+  font-style: italic;
+}
+.section-videos .flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.section-videos .container {
+  width: 100%;
+  margin-top: 2.6rem;
+}
+.section-videos .video {
+  width: 100%;
+}
+.section-videos .title {
+  margin-top: 0.325rem;
+  font-size: var(--fs-500);
+  text-align: center;
+  color: var(--clr-accent);
+}
+
+@media screen and (min-width: 56.25rem) {
+  .section-videos .flex {
+    flex-direction: row;
+  }
+  .section-videos .container {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
