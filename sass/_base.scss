@@ -8,22 +8,6 @@
 }
 
 @font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: 900;
-  src: url("public/fonts/Black.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: 100;
-  src: url("public/fonts/ThinOutline.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
   font-family: "MADE TOMMY";
   font-style: normal;
   font-weight: 100;
@@ -79,48 +63,6 @@
   font-display: swap;
 }
 
-//
-
-@font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: 300;
-  src: url("public/fonts/LightOutline.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: normal;
-  src: url("public/fonts/RegularOutline.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: 500;
-  src: url("public/fonts/MediumOutline.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: bold;
-  src: url("public/fonts/BoldOutline.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MADE TOMMY Outline";
-  font-style: normal;
-  font-weight: bold;
-  src: url("public/fonts/ExtraBoldOutline.otf") format("opentype");
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Matiz";
   font-style: normal;
@@ -136,6 +78,10 @@
   --clr-main: #ff992d;
   --clr-black: #252525;
   --clr-white: #fff;
+
+  --select-border: rgb(170, 170, 170);
+  --select-focus: var(--clr-main);
+  --select-arrow: var(--select-border);
 
   /* Constants for Base font size (fluid) */
   --fs-base: 16px;
@@ -166,54 +112,14 @@
   --fs-200-max: calc(var(--fs-300-max) / var(--fs-factor-max));
 
   /* Derived font sizes (fluid) */
-  --fs-200:
-    clamp(
-      var(--fs-200-min),
-      var(--fs-200-min) + 4vw,
-      var(--fs-200-max)
-    );
-  --fs-300:
-    clamp(
-      var(--fs-300-min),
-      var(--fs-300-min) + 2vw,
-      var(--fs-300-max)
-    );
-  --fs-400:
-    clamp(
-      var(--fs-400-min),
-      var(--fs-400-min) + 0vw,
-      var(--fs-400-max)
-    );
-  --fs-500:
-    clamp(
-      var(--fs-500-min),
-      var(--fs-500-min) + 1vw,
-      var(--fs-500-max)
-    );
-  --fs-600:
-    clamp(
-      var(--fs-600-min),
-      var(--fs-600-min) + 1.5vw,
-      var(--fs-600-max)
-    );
-  --fs-700:
-    clamp(
-      var(--fs-700-min),
-      var(--fs-700-min) + 2vw,
-      var(--fs-700-max)
-    );
-  --fs-800:
-    clamp(
-      var(--fs-800-min),
-      var(--fs-800-min) + 3vw,
-      var(--fs-800-max)
-    );
-  --fs-900:
-    clamp(
-      var(--fs-900-min),
-      var(--fs-900-min) + 4vw,
-      var(--fs-900-max)
-    );
+  --fs-200: clamp(var(--fs-200-min), var(--fs-200-min) + 4vw, var(--fs-200-max));
+  --fs-300: clamp(var(--fs-300-min), var(--fs-300-min) + 2vw, var(--fs-300-max));
+  --fs-400: clamp(var(--fs-400-min), var(--fs-400-min) + 0vw, var(--fs-400-max));
+  --fs-500: clamp(var(--fs-500-min), var(--fs-500-min) + 1vw, var(--fs-500-max));
+  --fs-600: clamp(var(--fs-600-min), var(--fs-600-min) + 1.5vw, var(--fs-600-max));
+  --fs-700: clamp(var(--fs-700-min), var(--fs-700-min) + 2vw, var(--fs-700-max));
+  --fs-800: clamp(var(--fs-800-min), var(--fs-800-min) + 3vw, var(--fs-800-max));
+  --fs-900: clamp(var(--fs-900-min), var(--fs-900-min) + 4vw, var(--fs-900-max));
 
   /* Derived spacings */
   --sp-200: calc(var(--sp-factor) * 0.5);
@@ -408,12 +314,11 @@ select {
 }
 
 .underline-accent {
-  background-image:
-    linear-gradient(
-      120deg,
-      var(--clr-accent) 0%,
-      var(--clr-accent) 100%
-    );
+  background-image: linear-gradient(
+    120deg,
+    var(--clr-accent) 0%,
+    var(--clr-accent) 100%
+  );
   background-repeat: no-repeat;
   background-position: 0 88%;
   background-size: 100% 68%;
