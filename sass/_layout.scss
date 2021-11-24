@@ -29,6 +29,10 @@
 .section-warning {
   min-height: 40vh;
 
+  .above-title {
+    margin: 0;
+  }
+
   h2 {
     span {
       color: var(--clr-white);
@@ -76,8 +80,10 @@
 
 // SECTION FRANCHISES
 .section-franchises {
+  .above-title {
+    margin: 0;
+  }
   .below-title {
-    margin-top: -0.65rem;
     margin-bottom: 5.2rem;
     font-style: italic;
     font-weight: 500;
@@ -154,7 +160,6 @@
 
 .section-videos {
   .below-title {
-    margin-top: -0.325rem;
     font-style: italic;
     font-weight: 500;
   }
