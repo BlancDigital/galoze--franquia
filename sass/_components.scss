@@ -19,9 +19,10 @@
   justify-items: center;
 
   .title {
+    margin-bottom: 0.325rem;
     font-size: var(--fs-700);
     font-weight: 800;
-    margin-bottom: 0.325rem;
+
     // text-align: center;
   }
 
@@ -46,8 +47,8 @@
 }
 
 .splide__slide.splide__slide img {
-  border-radius: 1rem;
   cursor: grab;
+  border-radius: 1rem;
 }
 
 .splide__slide img:active {
@@ -68,7 +69,7 @@
 
 @media screen and (min-width: 48rem) {
   .cards {
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
