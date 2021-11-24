@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let splide = new Splide(".splide", {
+  // Franquias
+  let slider1 = new Splide("#slider1", {
+    type: "slider",
+    perPage: 1,
+    rewind: true,
+    autoplay: false,
+    width: "100%",
+  })
+  slider1.mount()
+
+  // Imagens
+  let slider2 = new Splide("#slider2", {
     type: "slider",
     perPage: 1,
     rewind: true,
@@ -15,5 +26,5 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   })
-  splide.mount()
+  slider2.mount()
 })
