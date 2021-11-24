@@ -89,10 +89,6 @@
     font-weight: 500;
   }
 
-  .splide {
-    margin-bottom: 5.2rem;
-  }
-
   .splide__slide {
     padding: 0 5%;
   }
@@ -185,6 +181,17 @@
     font-size: var(--fs-500);
     color: var(--clr-accent);
     text-align: center;
+  }
+}
+
+footer {
+  padding: 2.75vh 0;
+  text-align: center;
+  background-color: var(--clr-accent);
+
+  p {
+    font-size: var(--fs-400);
+    color: var(--clr-white);
   }
 }
 
