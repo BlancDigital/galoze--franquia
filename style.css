@@ -438,12 +438,12 @@ select {
   font-size: 1rem;
 }
 
-.splide__slide.splide__slide img {
+.splide__list.splide__list {
   cursor: grab;
   border-radius: 1rem;
 }
 
-.splide__slide img:active {
+.splide__list:active {
   cursor: grabbing;
 }
 
@@ -490,6 +490,9 @@ select {
 .section-warning {
   min-height: 40vh;
 }
+.section-warning .above-title {
+  margin: 0;
+}
 .section-warning h2 span {
   color: var(--clr-white);
 }
@@ -524,8 +527,10 @@ select {
   margin-bottom: 2.6rem;
 }
 
+.section-franchises .above-title {
+  margin: 0;
+}
 .section-franchises .below-title {
-  margin-top: -0.65rem;
   margin-bottom: 5.2rem;
   font-style: italic;
   font-weight: 500;
@@ -585,7 +590,6 @@ select {
 }
 
 .section-videos .below-title {
-  margin-top: -0.325rem;
   font-style: italic;
   font-weight: 500;
 }
