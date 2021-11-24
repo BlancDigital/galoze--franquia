@@ -1,8 +1,8 @@
 // SECTION HERO
 .section-hero {
-  min-height: 90vh;
   display: grid;
   place-content: center;
+  min-height: 90vh;
   text-align: center;
 
   img {
@@ -12,8 +12,8 @@
   }
 
   .above-title {
-    font-size: var(--fs-600);
     margin-bottom: 0.65rem;
+    font-size: var(--fs-600);
   }
 
   .below-title {
@@ -47,8 +47,8 @@
   .text--sublime {
     margin-top: 0.5rem;
     font-size: var(--fs-400);
-    font-weight: 500;
     font-style: italic;
+    font-weight: 500;
   }
 
   .center {
@@ -68,22 +68,73 @@
   min-height: 90vh;
 
   h2 {
-    margin-bottom: 2.6rem;
     // TODO: Ver como isso fica na tela do VItor
     max-width: 13ch;
+    margin-bottom: 2.6rem;
   }
 }
 
 // SECTION FRANCHISES
 .section-franchises {
-  display: grid;
-  place-content: center;
-
   .below-title {
     margin-top: -0.65rem;
-    font-weight: 500;
+    margin-bottom: 5.2rem;
     font-style: italic;
-    margin-bottom: 2.6rem;
+    font-weight: 500;
+  }
+
+  .splide {
+    margin-bottom: 5.2rem;
+  }
+
+  .splide__slide {
+    padding: 0 5%;
+  }
+
+  .splide__arrow.splide__arrow {
+    top: 103%; // move the arrows to the bottom
+    background-color: var(--clr-accent);
+    opacity: 100%;
+    transition: opacity 150ms ease-in;
+  }
+
+  .splide__arrow.splide__arrow svg {
+    fill: var(--clr-white);
+  }
+
+  .splide__arrow.splide__arrow:active {
+    opacity: 60%;
+  }
+
+  // change dots positioning
+  .splide__pagination.splide__pagination {
+    bottom: -1.6rem;
+  }
+
+  .splide__pagination__page.splide__pagination__page {
+    background-color: var(--clr-accent);
+  }
+
+  .splide__pagination__page.is-active.splide__pagination__page.is-active {
+    background-color: var(--clr-white);
+  }
+
+  .slide__title {
+    margin-bottom: 1.3rem;
+    font-size: var(--fs-700);
+    color: var(--clr-white);
+    text-align: center;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      position: relative;
+      font-size: var(--fs-500);
+      list-style: none;
+    }
   }
 }
 
@@ -104,8 +155,8 @@
 .section-videos {
   .below-title {
     margin-top: -0.325rem;
-    font-weight: 500;
     font-style: italic;
+    font-weight: 500;
   }
 
   .flex {
@@ -127,8 +178,27 @@
   .title {
     margin-top: 0.325rem;
     font-size: var(--fs-500);
-    text-align: center;
     color: var(--clr-accent);
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .section-franchises {
+    .item-list {
+      flex-direction: row;
+      gap: 1.3rem;
+      justify-content: center;
+
+      li + li {
+        margin-top: 0.65rem;
+      }
+    }
+
+    .item-list__item-wrapper {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
   }
 }
 
@@ -137,8 +207,29 @@
     .flex {
       flex-direction: row;
     }
+
     .container {
       width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .section-franchises {
+    .item-list {
+      li::before {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        content: "";
+        background-image: url(./public/images/coxa.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .splide__arrow.splide__arrow {
+      top: 50%; // realign the arrows to the center
     }
   }
 }
