@@ -1,3 +1,12 @@
+<?php 
+
+      // Monitoramento de leads (pedido da gestora de trafégo)
+      $url = "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; // Capturando a url
+      $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' ); // Sanitizando a url
+
+      // A url será passada através de um input invisível (type=hidden) do formulário
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -7,26 +16,30 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <!-- url -->
-    <link rel="canonical" href="http://..." />
-    <meta property="og:url" content="http://..." />
-    <meta name="twitter:url" content="http://..." />
-
     <!-- title -->
-    <meta property="og:title" content="Title" />
+    <meta property="og:title" content="Franquia Galo Zé" />
 
     <!-- description -->
-    <meta name="description" content="..." />
-    <meta property="og:description" content="..." />
-    <meta name="twitter:description" content="..." />
+    <meta
+      name="description"
+      content="Franguinho sequinho e suculento? Cheddar de outro planeta? É com a gente mesmo!"
+    />
+    <meta
+      property="og:description"
+      content="Franguinho sequinho e suculento? Cheddar de outro planeta? É com a gente mesmo!"
+    />
+    <meta
+      name="twitter:description"
+      content="Franguinho sequinho e suculento? Cheddar de outro planeta? É com a gente mesmo!"
+    />
 
     <!-- image -->
-    <meta property="og:image" content="http://..." />
-    <meta name="twitter:image" content="http://..." />
+    <!-- <meta property="og:image" content="http://..." />
+    <meta name="twitter:image" content="http://..." /> -->
 
     <!-- misc -->
     <meta property="og:locale" content="pt_BR" />
-    <meta name="theme-color" content="#a52a2a" />
+    <meta name="theme-color" content="#ff992d" />
 
     <link
       rel="preload"
@@ -66,21 +79,7 @@
     />
     <link
       rel="preload"
-      href="public/fonts/ThinOutline.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
       href="public/fonts/Black.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="public/fonts/BlackOutline.otf"
       as="font"
       type="font/otf"
       crossorigin
@@ -94,21 +93,7 @@
     />
     <link
       rel="preload"
-      href="public/fonts/BoldOutline.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
       href="public/fonts/ExtraBold.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="public/fonts/ExtraBoldOutline.otf"
       as="font"
       type="font/otf"
       crossorigin
@@ -122,28 +107,7 @@
     />
     <link
       rel="preload"
-      href="public/fonts/LightOutline.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
       href="public/fonts/Medium.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="public/fonts/MediumOutline.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="public/fonts/RegularOutline.otf"
       as="font"
       type="font/otf"
       crossorigin
@@ -156,9 +120,12 @@
       crossorigin
     />
 
-    <title>Document</title>
+    <title>Galo Zé - Franquia</title>
   </head>
   <body>
+    <div class="exit-form__trigger" id="exitFormTrigger"></div>
+    <div class="exit-form__trigger-activator" id="exitFormTriggerActivator"></div>
+
     <section class="section-hero">
       <div class="section-center">
         <img src="./public/images/logo-final-laranja.png" alt="" />
@@ -258,6 +225,8 @@
           <!-- end of item -->
         </div>
       </div>
+
+      <button class="btn btn--cta">Virar franqueado? Tô dentro!!</button>
     </section>
 
     <!-- SECTION FRANCHISES -->
@@ -340,6 +309,7 @@
             </div>
           </div>
         </div>
+        <button class="btn btn--cta btn--red">Virar franqueado? Tô dentro!</button>
       </div>
     </section>
 
@@ -370,10 +340,9 @@
             </ul>
           </div>
         </div>
+        <button class="btn btn--cta">Virar franqueado? Tô dentro!</button>
       </div>
     </section>
-
-    <!-- SECTION KNOW-HOW -->
 
     <!-- SECTION VIDEOS -->
     <section class="section-videos">
@@ -409,10 +378,257 @@
           </div>
           <!-- end of video item -->
         </div>
+
+        <button class="btn btn--cta btn--red">Virar franqueado? Tô dentro!</button>
       </div>
     </section>
 
     <!-- FOOTER -->
+    <footer>
+      <div class="section-center">
+        <p>Feito com 🧡 por Blanc Digital <span class="smile">:)</span></p>
+      </div>
+    </footer>
+
+    <div class="modal modal--main-form is-hidden" id="modal">
+      <div class="modal__image-wrapper">
+        <img src="./public/images/ft05.jpg" alt="" />
+      </div>
+
+      <form
+        method="post"
+        action="enviar.php"
+        id="enviar"
+        name="enviar"
+        class="form"
+        autocomplete="off"
+        onsubmit="return validateForm(e)"
+      >
+        <div class="wrapper">
+          <button class="btn btn--full btn--close" type="button">&times;</button>
+
+          <h6>Quase lá pra você ser um dono do galo!!</h6>
+          <p>
+            Que bom saber que você tá com a gente nessa!! Só precisamos de mais
+            algumas coisinhas e então nossa equipe incrível vai te ajudar no processo
+            de ter <b>sua própria franquia</b>!
+          </p>
+          <p id="alertForm" class="alert is-hidden">
+            Preencha todos os campos corretamente!
+          </p>
+          <!-- FORM__NAME -->
+          <div class="form__field-wrapper">
+            <label class="" for="name-form">Nome*</label>
+            <input
+              type="text"
+              name="name-form"
+              id="nameForm"
+              placeholder="Seu nome aqui"
+              autocomplete="off"
+              oninput="validateName(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__EMAIL -->
+          <div class="form__field-wrapper">
+            <label for="email-form">Seu melhor e-mail para contato*</label>
+            <input
+              type="email"
+              name="email-form"
+              id="emailForm"
+              placeholder="email@exemplo.com"
+              oninput="validateEmail(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__CELLPHONE -->
+          <div class="form__field-wrapper">
+            <label class="" for="cellphone-form">Número de celular*</label>
+            <input
+              type="tel"
+              name="cellphone-form"
+              id="cellphoneForm"
+              placeholder="Seu número aqui"
+              title="Seu número de celular com o código de área"
+              oninput="validateNumber(this)"
+              onkeypress="mascara(this)"
+              maxlength="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__COUNTRY -->
+          <div class="form__field-wrapper">
+            <label class="" for="country-form">País de interesse*</label>
+            <input
+              type="text"
+              name="country-form"
+              id="countryForm"
+              placeholder="Insira o país de interesse aqui"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__STATE-->
+          <div class="form__field-wrapper">
+            <label class="" for="state-form">Estado*</label>
+            <input
+              type="text"
+              name="state-form"
+              id="stateForm"
+              placeholder="Insira o estado aqui"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__CITY -->
+          <div class="form__field-wrapper">
+            <label class="" for="city-form">Cidade*</label>
+            <input
+              type="text"
+              name="city-form"
+              id="cityForm"
+              placeholder="Insira a cidade aqui"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__CONHECEU -->
+          <div class="form__field-wrapper">
+            <label class="" for="conheceu-form">Como nos conheceu?</label>
+            <input
+              type="text"
+              name="conheceu-form"
+              id="conheceuForm"
+              placeholder="Conte-nos como nos conheceu"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- FORM__QUANTIA -->
+          <div class="form__field-wrapper">
+            <label for="quantia-form">Capital para investimento*</label>
+            <div class="form__select-wrapper">
+              <select name="quantia-form" required>
+                <option selected="selected" disabled="disabled" value="">
+                  Selecione um valor
+                </option>
+                <option value="Até  70 mil reais">Até R$70 mil</option>
+                <option value="Até 100 mil reais">Até R$100 mil</option>
+                <option value="Até R$180 mil reais">Até R$180 mil</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            class="btn btn--full btn--submit"
+            name="submit-btn"
+            formaction="enviar.php"
+            type="submit"
+            id="enviar"
+            title="Enviar formulário"
+          >
+            Quero ser um dono de franquia!!
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- EXIT FORM -->
+    <div class="modal modal--exit-form is-hidden" id="modal">
+      <div class="modal__image-wrapper">
+        <img src="./public/images/ft05.jpg" alt="" />
+      </div>
+
+      <form
+        method="post"
+        id="exitForm"
+        name="envia"
+        class="form form--exit"
+        autocomplete="off"
+      >
+        <div class="wrapper">
+          <button class="btn btn--full btn--close btn--close-exit" type="button">
+            &times;
+          </button>
+
+          <h6>
+            Calma ai, não vamos nos precipitar... <span class="smile">:(</span>
+          </h6>
+          <p>
+            Depois de todo tempo que a gente passou junto, você vai me abandonar?
+            Vamo lá, me dá mais uma chance... <i><b>Por favorzinho</b></i
+            >?
+          </p>
+          <p id="alertForm" class="alert is-hidden">
+            Preencha todos os campos corretamente!
+          </p>
+
+          <input type="hidden" name="url-form" value="<?php echo $escaped_url?>" />
+
+          <!-- FORM__NAME -->
+          <div class="form__field-wrapper">
+            <label class="" for="name-form">Nome*</label>
+            <input
+              type="text"
+              name="name-form"
+              id="nameForm"
+              placeholder="Seu nome aqui"
+              autocomplete="off"
+              oninput="validateName(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__EMAIL -->
+          <div class="form__field-wrapper">
+            <label for="email-form">Seu melhor e-mail para contato*</label>
+            <input
+              type="email"
+              name="email-form"
+              id="emailForm"
+              placeholder="email@exemplo.com"
+              oninput="validateEmail(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__CELLPHONE -->
+          <div class="form__field-wrapper">
+            <label class="" for="cellphone-form">Número de celular*</label>
+            <input
+              type="tel"
+              name="cellphone-form"
+              id="cellphoneForm"
+              placeholder="Seu número aqui"
+              title="Seu número de celular com o código de área"
+              onkeypress="mascara(this)"
+              oninput="validateNumber(this)"
+              maxlength="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <button
+            class="btn btn--full btn--submit"
+            name="submit-btn"
+            formaction="enviar.php"
+            type="submit"
+            id="enviar"
+            title="Enviar formulário"
+          >
+            Quero dar mais uma chance pra franquia! <span class="smile">:)</span>
+          </button>
+        </div>
+      </form>
+    </div>
 
     <script src="./main.js" async></script>
     <script src="./libs/splide-3.6.4/splide.min.js" defer></script>
