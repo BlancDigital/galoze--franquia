@@ -9,107 +9,107 @@
 
 @font-face {
   font-family: "MADE TOMMY Outline";
-  src: url("public/fonts/Black.otf") format("opentype");
-  font-weight: 900;
   font-style: normal;
+  font-weight: 900;
+  src: url("public/fonts/Black.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY Outline";
+  font-style: normal;
+  font-weight: 100;
   src: url("public/fonts/ThinOutline.otf") format("opentype");
-  font-weight: 100;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
+  font-style: normal;
+  font-weight: 100;
   src: url("public/fonts/Thin.otf") format("opentype");
-  font-weight: 100;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
+  font-style: normal;
+  font-weight: 300;
   src: url("public/fonts/Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
+  font-style: normal;
+  font-weight: normal;
   src: url("public/fonts/Regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
+  font-style: normal;
+  font-weight: 500;
   src: url("public/fonts/Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
+  font-style: normal;
+  font-weight: bold;
   src: url("public/fonts/Bold.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
+  font-style: normal;
+  font-weight: bold;
   src: url("public/fonts/ExtraBold.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY";
-  src: url("public/fonts/Black.otf") format("opentype");
+  font-style: normal;
   font-weight: 900;
-  font-style: normal;
+  src: url("public/fonts/Black.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY Outline";
-  src: url("public/fonts/LightOutline.otf") format("opentype");
+  font-style: normal;
   font-weight: 300;
-  font-style: normal;
+  src: url("public/fonts/LightOutline.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY Outline";
-  src: url("public/fonts/RegularOutline.otf") format("opentype");
+  font-style: normal;
   font-weight: normal;
-  font-style: normal;
+  src: url("public/fonts/RegularOutline.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY Outline";
-  src: url("public/fonts/MediumOutline.otf") format("opentype");
+  font-style: normal;
   font-weight: 500;
-  font-style: normal;
+  src: url("public/fonts/MediumOutline.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY Outline";
+  font-style: normal;
+  font-weight: bold;
   src: url("public/fonts/BoldOutline.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MADE TOMMY Outline";
-  src: url("public/fonts/ExtraBoldOutline.otf") format("opentype");
-  font-weight: bold;
   font-style: normal;
+  font-weight: bold;
+  src: url("public/fonts/ExtraBoldOutline.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "Matiz";
-  src: url("public/fonts/Matiz.ttf") format("truetype");
-  font-weight: 900;
   font-style: normal;
+  font-weight: 900;
+  src: url("public/fonts/Matiz.ttf") format("truetype");
   font-display: swap;
 }
 :root {
@@ -126,7 +126,7 @@
   --sp-factor: 1rem;
   --lh-min: 1;
   --lh-max: 1.5;
-  /* Derived font sizes (min)*/
+  /* Derived font sizes (min) */
   --fs-400-min: var(--fs-base);
   --fs-500-min: calc(var(--fs-400-min) * var(--fs-factor-min));
   --fs-600-min: calc(var(--fs-500-min) * var(--fs-factor-min));
@@ -135,7 +135,7 @@
   --fs-900-min: calc(var(--fs-800-min) * var(--fs-factor-min));
   --fs-300-min: calc(var(--fs-400-min) / var(--fs-factor-min));
   --fs-200-min: calc(var(--fs-300-min) / var(--fs-factor-min));
-  /* Derived font sizes (max)*/
+  /* Derived font sizes (max) */
   --fs-400-max: var(--fs-base);
   --fs-500-max: calc(var(--fs-400-max) * var(--fs-factor-max));
   --fs-600-max: calc(var(--fs-500-max) * var(--fs-factor-max));
@@ -145,46 +145,54 @@
   --fs-300-max: calc(var(--fs-400-max) / var(--fs-factor-max));
   --fs-200-max: calc(var(--fs-300-max) / var(--fs-factor-max));
   /* Derived font sizes (fluid) */
-  --fs-200: clamp(
-    var(--fs-200-min),
-    var(--fs-200-min) + 4vw,
-    var(--fs-200-max)
-  );
-  --fs-300: clamp(
-    var(--fs-300-min),
-    var(--fs-300-min) + 2vw,
-    var(--fs-300-max)
-  );
-  --fs-400: clamp(
-    var(--fs-400-min),
-    var(--fs-400-min) + 0vw,
-    var(--fs-400-max)
-  );
-  --fs-500: clamp(
-    var(--fs-500-min),
-    var(--fs-500-min) + 1vw,
-    var(--fs-500-max)
-  );
-  --fs-600: clamp(
-    var(--fs-600-min),
-    var(--fs-600-min) + 1.5vw,
-    var(--fs-600-max)
-  );
-  --fs-700: clamp(
-    var(--fs-700-min),
-    var(--fs-700-min) + 2vw,
-    var(--fs-700-max)
-  );
-  --fs-800: clamp(
-    var(--fs-800-min),
-    var(--fs-800-min) + 3vw,
-    var(--fs-800-max)
-  );
-  --fs-900: clamp(
-    var(--fs-900-min),
-    var(--fs-900-min) + 4vw,
-    var(--fs-900-max)
-  );
+  --fs-200:
+    clamp(
+      var(--fs-200-min),
+      var(--fs-200-min) + 4vw,
+      var(--fs-200-max)
+    );
+  --fs-300:
+    clamp(
+      var(--fs-300-min),
+      var(--fs-300-min) + 2vw,
+      var(--fs-300-max)
+    );
+  --fs-400:
+    clamp(
+      var(--fs-400-min),
+      var(--fs-400-min) + 0vw,
+      var(--fs-400-max)
+    );
+  --fs-500:
+    clamp(
+      var(--fs-500-min),
+      var(--fs-500-min) + 1vw,
+      var(--fs-500-max)
+    );
+  --fs-600:
+    clamp(
+      var(--fs-600-min),
+      var(--fs-600-min) + 1.5vw,
+      var(--fs-600-max)
+    );
+  --fs-700:
+    clamp(
+      var(--fs-700-min),
+      var(--fs-700-min) + 2vw,
+      var(--fs-700-max)
+    );
+  --fs-800:
+    clamp(
+      var(--fs-800-min),
+      var(--fs-800-min) + 3vw,
+      var(--fs-800-max)
+    );
+  --fs-900:
+    clamp(
+      var(--fs-900-min),
+      var(--fs-900-min) + 4vw,
+      var(--fs-900-max)
+    );
   /* Derived spacings */
   --sp-200: calc(var(--sp-factor) * 0.5);
   --sp-300: calc(var(--sp-factor) * 0.75);
@@ -274,10 +282,10 @@ section {
 }
 
 section:nth-child(odd) {
+  color: var(--clr-white);
   background: var(--clr-accent);
   background-image: url(./public/images/pattern-2.png);
   background-size: 200px;
-  color: var(--clr-white);
 }
 section:nth-child(odd) h1,
 section:nth-child(odd) h2 {
@@ -345,14 +353,14 @@ select {
   }
 }
 .above-title {
-  font-size: var(--fs-500);
   margin-bottom: 0.325rem;
+  font-size: var(--fs-500);
 }
 
 .smile {
   display: inline-block;
-  transform: rotateZ(90deg);
   margin-left: 0.5rem;
+  transform: rotateZ(90deg);
 }
 
 .section-center {
@@ -369,22 +377,26 @@ select {
 .underline-main {
   background-image: linear-gradient(120deg, #b36b1f 0%, #b36b1f 100%);
   background-repeat: no-repeat;
-  background-size: 100% 0.6em;
   background-position: 0 88%;
+  background-size: 100% 0.6em;
   transition: background-size 0.125s ease-in;
 }
 
 .underline-accent {
   background-image: linear-gradient(120deg, var(--clr-accent) 0%, var(--clr-accent) 100%);
   background-repeat: no-repeat;
-  background-size: 100% 68%;
   background-position: 0 88%;
+  background-size: 100% 68%;
   transition: background-size 0.125s ease-in;
 }
 
 .underline-main:hover,
 .underline-accent:hover {
   background-size: 140% 98%;
+}
+
+.fw-500 {
+  font-weight: 500;
 }
 
 .cards {
@@ -407,9 +419,9 @@ select {
   justify-items: center;
 }
 .cards__card .title {
+  margin-bottom: 0.325rem;
   font-size: var(--fs-700);
   font-weight: 800;
-  margin-bottom: 0.325rem;
 }
 .cards__card img {
   align-self: flex-end;
@@ -427,8 +439,8 @@ select {
 }
 
 .splide__slide.splide__slide img {
-  border-radius: 1rem;
   cursor: grab;
+  border-radius: 1rem;
 }
 
 .splide__slide img:active {
@@ -449,14 +461,14 @@ select {
 
 @media screen and (min-width: 48rem) {
   .cards {
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 .section-hero {
-  min-height: 90vh;
   display: grid;
   place-content: center;
+  min-height: 90vh;
   text-align: center;
 }
 .section-hero img {
@@ -465,8 +477,8 @@ select {
   margin-bottom: 1rem;
 }
 .section-hero .above-title {
-  font-size: var(--fs-600);
   margin-bottom: 0.65rem;
+  font-size: var(--fs-600);
 }
 .section-hero .below-title {
   font-size: var(--fs-500);
@@ -491,8 +503,8 @@ select {
 .section-warning .text--sublime {
   margin-top: 0.5rem;
   font-size: var(--fs-400);
-  font-weight: 500;
   font-style: italic;
+  font-weight: 500;
 }
 .section-warning .center {
   margin-top: 2.6rem;
@@ -508,19 +520,57 @@ select {
   min-height: 90vh;
 }
 .section-numbers h2 {
-  margin-bottom: 2.6rem;
   max-width: 13ch;
+  margin-bottom: 2.6rem;
 }
 
-.section-franchises {
-  display: grid;
-  place-content: center;
-}
 .section-franchises .below-title {
   margin-top: -0.65rem;
-  font-weight: 500;
+  margin-bottom: 5.2rem;
   font-style: italic;
-  margin-bottom: 2.6rem;
+  font-weight: 500;
+}
+.section-franchises .splide {
+  margin-bottom: 5.2rem;
+}
+.section-franchises .splide__slide {
+  padding: 0 5%;
+}
+.section-franchises .splide__arrow.splide__arrow {
+  top: 103%;
+  background-color: var(--clr-accent);
+  opacity: 100%;
+  transition: opacity 150ms ease-in;
+}
+.section-franchises .splide__arrow.splide__arrow svg {
+  fill: var(--clr-white);
+}
+.section-franchises .splide__arrow.splide__arrow:active {
+  opacity: 60%;
+}
+.section-franchises .splide__pagination.splide__pagination {
+  bottom: -1.6rem;
+}
+.section-franchises .splide__pagination__page.splide__pagination__page {
+  background-color: var(--clr-accent);
+}
+.section-franchises .splide__pagination__page.is-active.splide__pagination__page.is-active {
+  background-color: var(--clr-white);
+}
+.section-franchises .slide__title {
+  margin-bottom: 1.3rem;
+  font-size: var(--fs-700);
+  color: var(--clr-white);
+  text-align: center;
+}
+.section-franchises .item-list {
+  display: flex;
+  flex-direction: column;
+}
+.section-franchises .item-list li {
+  position: relative;
+  font-size: var(--fs-500);
+  list-style: none;
 }
 
 .section-gallery {
@@ -536,8 +586,8 @@ select {
 
 .section-videos .below-title {
   margin-top: -0.325rem;
-  font-weight: 500;
   font-style: italic;
+  font-weight: 500;
 }
 .section-videos .flex {
   display: flex;
@@ -555,16 +605,44 @@ select {
 .section-videos .title {
   margin-top: 0.325rem;
   font-size: var(--fs-500);
-  text-align: center;
   color: var(--clr-accent);
+  text-align: center;
 }
 
+@media screen and (min-width: 48rem) {
+  .section-franchises .item-list {
+    flex-direction: row;
+    gap: 1.3rem;
+    justify-content: center;
+  }
+  .section-franchises .item-list li + li {
+    margin-top: 0.65rem;
+  }
+  .section-franchises .item-list__item-wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
 @media screen and (min-width: 56.25rem) {
   .section-videos .flex {
     flex-direction: row;
   }
   .section-videos .container {
     width: 50%;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .section-franchises .item-list li::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "";
+    background-image: url(./public/images/coxa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .section-franchises .splide__arrow.splide__arrow {
+    top: 50%;
   }
 }
 
