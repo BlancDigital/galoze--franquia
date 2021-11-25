@@ -14,7 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon -->
-    <link rel="shortcut icon" href="./public/images/cropped-favicon-32x32.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./public/images/cropped-favicon-32x32.png"
+      type="image/x-icon"
+    />
 
     <!-- title -->
     <meta property="og:title" content="Franquia Galo Zé" />
@@ -41,8 +45,7 @@
     <meta property="og:locale" content="pt_BR" />
     <meta name="theme-color" content="#ff992d" />
 
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Splide lib -->
     <link
@@ -125,7 +128,12 @@
     <!-- SECTION HERO -->
     <section class="section-hero">
       <div class="section-center">
-        <img width="150" height="202.5" src="./public/images/logo-final-laranja.png" alt="" />
+        <img
+          width="150"
+          height="202.5"
+          src="./public/images/logo-final-laranja.png"
+          alt=""
+        />
         <p class="above-title">Pronto pra ser o</p>
         <h1>DONO <span>DO GALO?</span></h1>
 
@@ -225,7 +233,6 @@
         </div>
         <button class="btn btn--cta">Virar franqueado? Tô dentro!!</button>
       </div>
-
     </section>
 
     <!-- SECTION FRANCHISES -->
@@ -257,7 +264,7 @@
                     <li>Retorno do Investimento: 10 a 15 meses</li>
                     <li class="fw-500">Taxa de Publicidade: 1/2 salário mínimo</li>
                     <li class="fw-500">Royalties: 1 salário mínimo</li>
-                  </div>
+                  </ul>
                 </div>
               </div>
               <!-- end of slide -->
@@ -279,7 +286,7 @@
                     <li>Retorno do Investimento: 18 a 24 meses</li>
                     <li class="fw-500">Taxa de Publicidade: 1/2 salario mínimo</li>
                     <li class="fw-500">Royalties: 2 salários mínimos</li>
-                  </div>
+                  </ul>
                 </div>
               </div>
               <!-- end of slide -->
@@ -403,12 +410,7 @@
         autocomplete="off"
         onsubmit="return validateForm(e)"
       >
-
-        <input
-          type="hidden"
-          name="url-form"
-          value="<?php echo $escaped_url?>"
-        />
+        <input type="hidden" name="url-form" value="<?php echo $escaped_url?>" />
         <div class="wrapper">
           <button class="btn btn--full btn--close" type="button">&times;</button>
 
