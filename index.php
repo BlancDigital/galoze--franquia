@@ -41,12 +41,8 @@
     <meta property="og:locale" content="pt_BR" />
     <meta name="theme-color" content="#ff992d" />
 
-    <link
-      rel="preload"
-      href="./style.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
+
+    <link rel="stylesheet" href="style.css">
 
     <!-- Splide lib -->
     <link
@@ -128,7 +124,7 @@
 
     <section class="section-hero">
       <div class="section-center">
-        <img src="./public/images/logo-final-laranja.png" alt="" />
+        <img width="150" height="202.5" src="./public/images/logo-final-laranja.png" alt="" />
         <p class="above-title">Pronto pra ser o</p>
         <h1>DONO <span>DO GALO?</span></h1>
 
@@ -323,19 +319,19 @@
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
-                <img src="./public/images/ft01.jpg" alt="" />
+                <img width="800" height="800" data-splide-lazy="./public/images/ft01.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="./public/images/ft02.jpg" alt="" />
+                <img width="800" height="800" data-splide-lazy="./public/images/ft02.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="./public/images/ft03.jpg" alt="" />
+                <img width="800" height="800" data-splide-lazy="./public/images/ft03.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="./public/images/ft04.jpg" alt="" />
+                <img width="800" height="800" data-splide-lazy="./public/images/ft04.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="./public/images/ft05.jpg" alt="" />
+                <img width="800" height="800" data-splide-lazy="./public/images/ft05.jpg" alt="" />
               </li>
             </ul>
           </div>
@@ -392,7 +388,7 @@
 
     <div class="modal modal--main-form is-hidden" id="modal">
       <div class="modal__image-wrapper">
-        <img src="./public/images/ft05.jpg" alt="" />
+        <img data-src="./public/images/ft05.jpg" class="lazyload" alt="" />
       </div>
 
       <form
@@ -543,7 +539,7 @@
     <!-- EXIT FORM -->
     <div class="modal modal--exit-form is-hidden" id="modal">
       <div class="modal__image-wrapper">
-        <img src="./public/images/ft05.jpg" alt="" />
+        <img data-src="./public/images/ft05.jpg" class="lazyload" alt="" />
       </div>
 
       <form
@@ -630,7 +626,8 @@
       </form>
     </div>
 
-    <script src="./main.js" async></script>
+    <script src="./libs/lazysizes/lazysizes.min.js" async></script>
+    <script src="./main.js" defer></script>
     <script src="./libs/splide-3.6.4/splide.min.js" defer></script>
     <script src="./libs/lite-youtube/lite-ytb-embed.js" defer></script>
   </body>
