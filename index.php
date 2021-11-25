@@ -222,7 +222,7 @@
               height="100"
             />
             <div class="cards__card__text">
-              <p class="title">16 <span> meses pro payback</span></p>
+              <p class="title">15 <span> meses pro payback</span></p>
               <p class="text">
                 É uma média, ok? Mas que o payback vem rápido, ele vem! (só perde pro
                 nosso tempo de entrega <span>¯\_(ツ)_/¯</span>)
