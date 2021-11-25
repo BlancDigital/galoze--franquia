@@ -1,7 +1,7 @@
 /* 
   O propósito da função runOnStart é lidar com um bug do Safari (versão 15.0 no momento desse comentário) que faz com que o evento do DOMContentLoaded é disparado antes do listener ser chamado, resultando, assim, em comportamentos indesejáveis.
 
-  O código checa se o DOMContentLoaded já foi disparado (por isso o document não estar mais carregnado (ver código abaixo da função runOnStart)), e se sim, roda o código. Se ele NÃO foi disparado ainda, então o listener é inicializado
+  O código checa se o DOMContentLoaded já foi disparado (por isso o document não estar mais carregando (ver código abaixo da função runOnStart)), e se sim, roda o código. Se ele NÃO foi disparado ainda, então o listener é inicializado
 
 
   Referência da resolução: https://developer.apple.com/forums/thread/651215
@@ -25,6 +25,7 @@ function runOnStart() {
       perPage: 1,
       rewind: true,
       autoplay: true,
+      lazyLoad: "nearby",
       width: "800px",
       gap: "1rem",
       intersection: {
