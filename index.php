@@ -224,9 +224,9 @@
           </div>
           <!-- end of item -->
         </div>
+        <button class="btn btn--cta">Virar franqueado? Tô dentro!!</button>
       </div>
 
-      <button class="btn btn--cta">Virar franqueado? Tô dentro!!</button>
     </section>
 
     <!-- SECTION FRANCHISES -->
