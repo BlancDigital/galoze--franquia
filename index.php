@@ -122,6 +122,7 @@
     <div class="exit-form__trigger" id="exitFormTrigger"></div>
     <div class="exit-form__trigger-activator" id="exitFormTriggerActivator"></div>
 
+    <!-- SECTION HERO -->
     <section class="section-hero">
       <div class="section-center">
         <img width="150" height="202.5" src="./public/images/logo-final-laranja.png" alt="" />
@@ -136,6 +137,7 @@
       </div>
     </section>
 
+    <!-- SECTION WARNING -->
     <section class="section-warning">
       <div class="section-center">
         <p class="above-title">Mas antes...</p>
@@ -155,6 +157,7 @@
       </div>
     </section>
 
+    <!-- SECTION NUMBERS -->
     <section class="section-numbers">
       <div class="section-center">
         <p class="above-title">Agora vamos ao que interessa!</p>
@@ -241,21 +244,21 @@
               <div class="splide__slide">
                 <p class="slide__title">MODELO PARA RUA</p>
 
-                <ul class="item-list">
-                  <div class="item-list__item-wrapper">
+                <div class="item-list">
+                  <ul class="item-list__item-wrapper">
                     <li>Faturamento Bruto: R$62.000</li>
                     <li>Investimento Total: R$99.900</li>
                     <li class="fw-500">Prazo de Contrato: 5 anos</li>
                     <li class="fw-500">Área: 70m2</li>
-                  </div>
+                  </ul>
 
-                  <div class="item-list__item-wrapper">
+                  <ul class="item-list__item-wrapper">
                     <li>Taxa de Franquia: R$34.000</li>
                     <li>Retorno do Investimento: 10 a 15 meses</li>
                     <li class="fw-500">Taxa de Publicidade: 1/2 salário mínimo</li>
                     <li class="fw-500">Royalties: 1 salário mínimo</li>
                   </div>
-                </ul>
+                </div>
               </div>
               <!-- end of slide -->
 
@@ -263,21 +266,21 @@
               <div class="splide__slide">
                 <p class="slide__title">MODELO PARA SHOPPING</p>
 
-                <ul class="item-list">
-                  <div class="item-list__item-wrapper">
+                <div class="item-list">
+                  <ul class="item-list__item-wrapper">
                     <li>Faturamento Bruto: R$80.000</li>
                     <li>Investimento Total: R$175.500</li>
                     <li class="fw-500">Prazo de Contrato: 5 anos</li>
                     <li class="fw-500">Área: 40m2</li>
-                  </div>
+                  </ul>
 
-                  <div class="item-list__item-wrapper">
+                  <ul class="item-list__item-wrapper">
                     <li>Taxa de Franquia: R$36.000</li>
                     <li>Retorno do Investimento: 18 a 24 meses</li>
                     <li class="fw-500">Taxa de Publicidade: 1/2 salario mínimo</li>
                     <li class="fw-500">Royalties: 2 salários mínimos</li>
                   </div>
-                </ul>
+                </div>
               </div>
               <!-- end of slide -->
 
@@ -285,21 +288,21 @@
               <div class="splide__slide">
                 <p class="slide__title">MODELO PARA DELIVERY</p>
 
-                <ul class="item-list">
-                  <div class="item-list__item-wrapper">
+                <div class="item-list">
+                  <ul class="item-list__item-wrapper">
                     <li>Faturamento Bruto: R$45.000</li>
                     <li>Investimento Total: R$69.500</li>
                     <li class="fw-500">Prazo de Contrato: 5 anos</li>
                     <li class="fw-500">Área: 30m2</li>
-                  </div>
+                  </ul>
 
-                  <div class="item-list__item-wrapper">
+                  <ul class="item-list__item-wrapper">
                     <li>Taxa de Franquia: R$29.000</li>
                     <li>Retorno do Investimento: 10 a 15 meses</li>
                     <li class="fw-500">Taxa de Publicidade: 1/2 salario mínimo</li>
                     <li class="fw-500">Royalties: 1 salário mínimo</li>
-                  </div>
-                </ul>
+                  </ul>
+                </div>
               </div>
               <!-- end of slide -->
             </div>
@@ -319,19 +322,19 @@
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
-                <img width="800" height="800" data-splide-lazy="./public/images/ft01.jpg" alt="" />
+                <img data-splide-lazy="./public/images/ft01.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img width="800" height="800" data-splide-lazy="./public/images/ft02.jpg" alt="" />
+                <img data-splide-lazy="./public/images/ft02.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img width="800" height="800" data-splide-lazy="./public/images/ft03.jpg" alt="" />
+                <img data-splide-lazy="./public/images/ft03.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img width="800" height="800" data-splide-lazy="./public/images/ft04.jpg" alt="" />
+                <img data-splide-lazy="./public/images/ft04.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img width="800" height="800" data-splide-lazy="./public/images/ft05.jpg" alt="" />
+                <img data-splide-lazy="./public/images/ft05.jpg" alt="" />
               </li>
             </ul>
           </div>
