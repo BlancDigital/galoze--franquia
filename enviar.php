@@ -17,14 +17,14 @@ $emailatt_leads   = 'leads@blancmarketingdigital.com.br';
 /* =-=-=-= Informações base do e-mail (enviada para todos os destinatários) =-=-=-=*/
 $corpoHTML = '<strong>Formulário de Contato</strong>
 
-<p><b>Nome:</b>               '.$nomeremetente.'  </p>
+<p><b>Nome:</b>               '.$nome.'           </p>
 <p><b>E-Mail:</b>             '.$email.'          </p>
 <p><b>Telefone:</b>           '.$telefone.'       </p>
 <p><b>País:</b>               '.$pais.'           </p>
 <p><b>Estado:</b>             '.$estado.'         </p>
 <p><b>Cidade:</b>             '.$cidade.'         </p>
 <p><b>Como nos conheceu:</b>  '.$comoConheceu.'   </p>
-<p><b>Investimento:</b>       '.$gasto.'          </p>
+<p><b>Investimento:</b>       '.$investimento.'   </p>
 <hr>';
 
 // O remetente deve ser um e-mail do seu domínio conforme determina a RFC 822.
