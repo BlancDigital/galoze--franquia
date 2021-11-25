@@ -429,7 +429,6 @@ select {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 4rem;
   justify-items: center;
 }
@@ -447,7 +446,7 @@ select {
   justify-items: center;
 }
 .cards__card .title {
-  margin-bottom: 0.325rem;
+  margin-bottom: 1.2rem;
   font-size: var(--fs-700);
   font-weight: 800;
 }
