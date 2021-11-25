@@ -400,6 +400,12 @@
         autocomplete="off"
         onsubmit="return validateForm(e)"
       >
+
+        <input
+          type="hidden"
+          name="url-form"
+          value="<?php echo $escaped_url?>"
+        />
         <div class="wrapper">
           <button class="btn btn--full btn--close" type="button">&times;</button>
 
