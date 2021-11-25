@@ -1,64 +1,74 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Franquias
-  let slider1 = new Splide("#slider1", {
-    type: "slider",
-    perPage: 1,
-    rewind: true,
-    autoplay: false,
-    width: "100%",
-  })
-  slider1.mount()
+/* 
+  O propósito da função runOnStart é lidar com um bug do Safari (versão 15.0 no momento desse comentário) que faz com que o evento do DOMContentLoaded é disparado antes do listener ser chamado, resultando, assim, em comportamentos indesejáveis.
 
-  // Imagens
-  let slider2 = new Splide("#slider2", {
-    type: "slider",
-    perPage: 1,
-    rewind: true,
-    autoplay: true,
-    width: "800px",
-    gap: "1rem",
-    intersection: {
-      inView: {
-        autoplay: true,
-      },
-      outView: {
-        autoplay: false,
-      },
-    },
-  })
-  slider2.mount()
+  O código checa se o DOMContentLoaded já foi disparado (por isso o document não estar mais carregnado (ver código abaixo da função runOnStart)), e se sim, roda o código. Se ele NÃO foi disparado ainda, então o listener é inicializado
 
-  // FORM STUFF
 
-  // get all alerts of the form
-  // const avisos = document.querySelectorAll(".alert")
-
-  // SEND FORM -- fetch api
-
-  const form = document.getElementById("enviar")
-  const exitForm = document.getElementById("exitForm")
-
-  // MODAL
-  /* The form is inside a modal, which is display: none by default 
-   The main purpose of the modal is to add a darker background behind the form
+  Referência da resolução: https://developer.apple.com/forums/thread/651215
 */
 
-  //get the modal
-  const modal = document.querySelector(".modal--main-form")
-  const exitModal = document.querySelector(".modal--exit-form")
+function runOnStart() {
+  // Franquias
+  setTimeout(() => {
+    let slider1 = new Splide("#slider1", {
+      type: "slider",
+      perPage: 1,
+      rewind: true,
+      autoplay: false,
+      width: "100%",
+    })
+    slider1.mount()
 
-  const nameForm = document.querySelector("#nameForm")
-  nameForm.addEventListener("input", (e) => validateName(e.target))
+    // Imagens
+    let slider2 = new Splide("#slider2", {
+      type: "slider",
+      perPage: 1,
+      rewind: true,
+      autoplay: true,
+      width: "800px",
+      gap: "1rem",
+      intersection: {
+        inView: {
+          autoplay: true,
+        },
+        outView: {
+          autoplay: false,
+        },
+      },
+    })
+    slider2.mount()
 
-  const cellphoneForm = document.querySelector("#cellphoneForm")
-  cellphoneForm.addEventListener("input", (e) => validateNumber(e.target))
+    // FORM STUFF
 
-  const emailForm = document.querySelector("#emailForm")
-  emailForm.addEventListener("input", (e) => validateEmail(e.target))
+    // get all alerts of the form
+    // const avisos = document.querySelectorAll(".alert")
 
-  // EXIT FORM STUFF
+    // SEND FORM -- fetch api
 
-  /* The exit form has 2 steps:
+    const form = document.getElementById("enviar")
+    const exitForm = document.getElementById("exitForm")
+
+    // MODAL
+    /* The form is inside a modal, which is display: none by default 
+   The main purpose of the modal is to add a darker background behind the form
+  */
+
+    //get the modal
+    const modal = document.querySelector(".modal--main-form")
+    const exitModal = document.querySelector(".modal--exit-form")
+
+    const nameForm = document.querySelector("#nameForm")
+    nameForm.addEventListener("input", (e) => validateName(e.target))
+
+    const cellphoneForm = document.querySelector("#cellphoneForm")
+    cellphoneForm.addEventListener("input", (e) => validateNumber(e.target))
+
+    const emailForm = document.querySelector("#emailForm")
+    emailForm.addEventListener("input", (e) => validateEmail(e.target))
+
+    // EXIT FORM STUFF
+
+    /* The exit form has 2 steps:
   (1) the main trigger (which is above the trigger activator)
   (2) the trigger activator (which is a switch to allow or not the
       trigger to show to exit form)
@@ -69,128 +79,137 @@ document.addEventListener("DOMContentLoaded", function () {
   the form will be shown, and the hasExitFormBeenShown will become true, not allowing
   it to show again, until a page refresh
      
-*/
+  */
 
-  let hasExitFormBeenShown = false
-  let exitFormActivator = false
+    let hasExitFormBeenShown = false
+    let exitFormActivator = false
 
-  const exitFormTrigger = document.querySelector("#exitFormTrigger")
-  exitFormTrigger.addEventListener("mouseenter", () => {
-    if (
-      !hasExitFormBeenShown &&
-      exitFormActivator &&
-      modal.classList.contains("is-hidden")
-    ) {
-      openModal(exitModal)
+    const exitFormTrigger = document.querySelector("#exitFormTrigger")
+    exitFormTrigger.addEventListener("mouseenter", () => {
+      if (
+        !hasExitFormBeenShown &&
+        exitFormActivator &&
+        modal.classList.contains("is-hidden")
+      ) {
+        openModal(exitModal)
 
-      hasExitFormBeenShown = true
-    }
-  })
-
-  const exitFormTriggerActivator = document.querySelector(
-    "#exitFormTriggerActivator"
-  )
-  exitFormTriggerActivator.addEventListener("mouseenter", () => {
-    exitFormActivator = true
-
-    // TODO: Change the detector from HTMLElements to mouse zones, to avoid block the user
-
-    // prevents the div from blocking mouse events
-    exitFormTriggerActivator.classList.add("is-hidden")
-  })
-
-  // Get the button that opens the modal
-  const ctas = document.querySelectorAll(".btn--cta")
-
-  // add click listeners to button to open the modal
-  for (let i = 0; i < ctas.length; i++) {
-    ctas[i].addEventListener("click", () => openModal(modal), true)
-  }
-
-  const alertForm = document.querySelector("#alertForm")
-
-  // (F) OPENMODAL
-
-  function openModal(modal) {
-    if (modal.style.display == "none") {
-      modal.style.display = "flex"
-    } else {
-      modal.classList.remove("is-hidden")
-      modal.style.animation = "fade-in 1s both"
-    }
-  }
-
-  // Get the button element that closes the modal
-  const btnCloseForm = document.querySelector(".btn--close")
-
-  btnCloseForm.onclick = function () {
-    modal.classList.add("is-hidden")
-  }
-
-  const btnCloseExitForm = document.querySelector(".btn--close-exit")
-  btnCloseExitForm.onclick = function () {
-    exitModal.classList.add("is-hidden")
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      // delays the addition of the class for 1s to play the animation
-      setTimeout(() => {
-        modal.classList.add("is-hidden")
-      }, 1000)
-      modal.style.animation = "fade-out 1s both"
-    }
-  }
-
-  form.addEventListener(
-    "submit",
-    function (e) {
-      // e.preventDefault()
-
-      if (validateForm()) {
-        modal.classList.add("is-hidden")
-
-        // Event snippet for Envio de formulário conversion page
-        // gtag("event", "conversion", {
-        //   send_to: "AW-336630608/NBHVCLLy59QCENCmwqAB",
-        // })
-        return true
-      } else {
-        e.preventDefault()
-        return false
-        // cellphoneForm.setCustomValidity("Porfavor, use um número válido")
+        hasExitFormBeenShown = true
       }
-    },
-    true
-  )
+    })
 
-  exitForm.addEventListener("submit", function (e) {
-    exitModal.classList.add("is-hidden")
+    const exitFormTriggerActivator = document.querySelector(
+      "#exitFormTriggerActivator"
+    )
+    exitFormTriggerActivator.addEventListener("mouseenter", () => {
+      exitFormActivator = true
 
-    return true
+      // TODO: Change the detector from HTMLElements to mouse zones, to avoid block the user
+
+      // prevents the div from blocking mouse events
+      exitFormTriggerActivator.classList.add("is-hidden")
+    })
+
+    // Get the button that opens the modal
+    const ctas = document.querySelectorAll(".btn--cta")
+
+    // add click listeners to button to open the modal
+    for (let i = 0; i < ctas.length; i++) {
+      ctas[i].addEventListener("click", () => openModal(modal), true)
+    }
+
+    const alertForm = document.querySelector("#alertForm")
+
+    // (F) OPENMODAL
+
+    function openModal(modal) {
+      if (modal.style.display == "none") {
+        modal.style.display = "flex"
+      } else {
+        modal.classList.remove("is-hidden")
+        modal.style.animation = "fade-in 1s both"
+      }
+    }
+
+    // Get the button element that closes the modal
+    const btnCloseForm = document.querySelector(".btn--close")
+
+    btnCloseForm.onclick = function () {
+      modal.classList.add("is-hidden")
+    }
+
+    const btnCloseExitForm = document.querySelector(".btn--close-exit")
+    btnCloseExitForm.onclick = function () {
+      exitModal.classList.add("is-hidden")
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        // delays the addition of the class for 1s to play the animation
+        setTimeout(() => {
+          modal.classList.add("is-hidden")
+        }, 1000)
+        modal.style.animation = "fade-out 1s both"
+      }
+    }
+
+    form.addEventListener(
+      "submit",
+      function (e) {
+        // e.preventDefault()
+
+        if (validateForm()) {
+          modal.classList.add("is-hidden")
+
+          // Event snippet for Envio de formulário conversion page
+          // gtag("event", "conversion", {
+          //   send_to: "AW-336630608/NBHVCLLy59QCENCmwqAB",
+          // })
+          return true
+        } else {
+          e.preventDefault()
+          return false
+          // cellphoneForm.setCustomValidity("Porfavor, use um número válido")
+        }
+      },
+      true
+    )
+
+    exitForm.addEventListener("submit", function (e) {
+      exitModal.classList.add("is-hidden")
+
+      return true
+    })
+
+    // prevent the key "Enter" from submitting the form
+    // window.addEventListener(
+    //   "keydown",
+    //   function (e) {
+    //     if (
+    //       e.keyIdentifier == "U+000A" ||
+    //       e.keyIdentifier == "Enter" ||
+    //       e.keyCode == 13
+    //     ) {
+    //       if (e.target.nodeName == "INPUT" && e.target.type !== "textarea") {
+    //         e.preventDefault()
+    //         return false
+    //       }
+    //     }
+    //   },
+    //   true
+    // )
+
+    // FORM
+  }, 250)
+}
+
+if (document.readyState !== "loading") {
+  runOnStart()
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    runOnStart()
   })
-
-  // prevent the key "Enter" from submitting the form
-  // window.addEventListener(
-  //   "keydown",
-  //   function (e) {
-  //     if (
-  //       e.keyIdentifier == "U+000A" ||
-  //       e.keyIdentifier == "Enter" ||
-  //       e.keyCode == 13
-  //     ) {
-  //       if (e.target.nodeName == "INPUT" && e.target.type !== "textarea") {
-  //         e.preventDefault()
-  //         return false
-  //       }
-  //     }
-  //   },
-  //   true
-  // )
-
-  // FORM
-})
+}
 
 // (F) VALIDATEFORM
 
