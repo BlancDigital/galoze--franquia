@@ -45,22 +45,6 @@
     <meta property="og:locale" content="pt_BR" />
     <meta name="theme-color" content="#ff992d" />
 
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Splide lib -->
-    <link
-      rel="preload"
-      href="./libs/splide-3.6.4/splide.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <link
-      rel="preload"
-      href="./libs/lite-youtube/lite-yt-embed.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-
     <!-- Fonts -->
     <link
       rel="preload"
@@ -69,6 +53,24 @@
       type="font/ttf"
       crossorigin
     />
+
+    <link
+      rel="preload"
+      href="public/fonts/Bold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="public/fonts/Regular.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
     <link
       rel="preload"
       href="public/fonts/Thin.otf"
@@ -79,13 +81,6 @@
     <link
       rel="preload"
       href="public/fonts/Black.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="public/fonts/Bold.otf"
       as="font"
       type="font/otf"
       crossorigin
@@ -111,13 +106,79 @@
       type="font/otf"
       crossorigin
     />
+
+    <!-- AOS -->
     <link
       rel="preload"
-      href="public/fonts/Regular.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
+      href="./libs/aos/aos.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <!-- Splide lib -->
+    <link
+      rel="preload"
+      href="./libs/splide-3.6.4/splide.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <!-- Lite Youtube -->
+    <link
+      rel="preload"
+      href="./libs/lite-youtube/lite-yt-embed.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-213724168-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "UA-213724168-1")
+      gtag("config", "AW-10814671575")
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        }
+        if (!f._fbq) f._fbq = n
+        n.push = n
+        n.loaded = !0
+        n.version = "2.0"
+        n.queue = []
+        t = b.createElement(e)
+        t.async = !0
+        t.src = v
+        s = b.getElementsByTagName(e)[0]
+        s.parentNode.insertBefore(t, s)
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      )
+      fbq("init", "1748277188645163")
+      fbq("track", "PageView")
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1748277188645163&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 
     <title>Galo Zé - Franquia</title>
   </head>
@@ -173,7 +234,7 @@
 
         <div class="cards">
           <!-- start of item -->
-          <div class="cards__card">
+          <div class="cards__card" data-aos="fade-right">
             <img src="./public/images/6.png" alt="" width="100" height="100" />
             <div class="cards__card__text">
               <p class="title">+6 anos de história</p>
@@ -185,7 +246,7 @@
           </div>
           <!-- end of item -->
           <!-- start of item -->
-          <div class="cards__card">
+          <div class="cards__card" data-aos="fade-left">
             <img
               src="./public/images/franchise.png"
               alt=""
@@ -202,10 +263,10 @@
           </div>
           <!-- end of item -->
           <!-- start of item -->
-          <div class="cards__card">
+          <div class="cards__card" data-aos="fade-right">
             <img src="./public/images/profits.png" alt="" width="100" height="100" />
             <div class="cards__card__text">
-              <p class="title">+170 <span> mil faturamento/ano</span></p>
+              <p class="title">+800 <span> mil faturamento/ano</span></p>
               <p class="text">
                 Já parou pra pensar quantas porções de isca de frango da pra comprar
                 com tanto dinheiro? Não? Nem a gente!
@@ -214,7 +275,7 @@
           </div>
           <!-- end of item -->
           <!-- start of item -->
-          <div class="cards__card">
+          <div class="cards__card" data-aos="fade-left">
             <img
               src="./public/images/transaction.png"
               alt=""
@@ -350,6 +411,51 @@
       </div>
     </section>
 
+    <!-- SECTION TESTIMONIALS -->
+    <section class="section-testimonials">
+      <div class="section-center">
+        <p class="above-title">Hora de chamar os convidados VIPs</p>
+        <h2>Depoimentos de franqueados</h2>
+        <p class="below-title">
+          Não somos nós, são <b>eles</b> que estão <b>falando</b>!!
+        </p>
+        <div class="flex">
+          <!-- start of video item -->
+          <div class="container">
+            <lite-youtube
+              videoid="wBXMSJ0PH9M"
+              playlabel="Depoimento 1"
+              class="video"
+            ></lite-youtube>
+            <p class="title">Depoimento do André Romero</p>
+          </div>
+          <!-- end of video item -->
+          <!-- start of video item -->
+          <div class="container">
+            <lite-youtube
+              videoid="Xk2pQRKcHmg"
+              playlabel="Depoimento 2"
+              class="video"
+            ></lite-youtube>
+            <p class="title">Depoimento do Ademir!</p>
+          </div>
+          <!-- end of video item -->
+          <!-- start of video item -->
+          <div class="container">
+            <lite-youtube
+              videoid="C2prLCTS5HE"
+              playlabel="Depoimento 3"
+              class="video"
+            ></lite-youtube>
+            <p class="title">Depoimento Bruce e Michelle!</p>
+          </div>
+          <!-- end of video item -->
+        </div>
+
+        <button class="btn btn--cta btn--red">Virar franqueado? Tô dentro!</button>
+      </div>
+    </section>
+
     <!-- SECTION VIDEOS -->
     <section class="section-videos">
       <div class="section-center">
@@ -385,14 +491,14 @@
           <!-- end of video item -->
         </div>
 
-        <button class="btn btn--cta btn--red">Virar franqueado? Tô dentro!</button>
+        <button class="btn btn--cta">Virar franqueado? Tô dentro!</button>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
       <div class="section-center">
-        <p>Feito com 🧡 por Blanc Digital <span class="smile">:)</span></p>
+        <p>Feito com 🖤 por Blanc Digital <span class="smile">:)</span></p>
       </div>
     </footer>
 
@@ -639,6 +745,7 @@
 
     <script src="./libs/lazysizes/lazysizes.min.js" async></script>
     <script src="./main.js" defer></script>
+    <script src="./libs/aos/aos.js" defer></script>
     <script src="./libs/splide-3.6.4/splide.min.js" defer></script>
     <script src="./libs/lite-youtube/lite-ytb-embed.js" defer></script>
   </body>
