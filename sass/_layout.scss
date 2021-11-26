@@ -158,10 +158,12 @@
   }
 }
 
+.section-testimonials,
 .section-videos {
   .below-title {
     font-style: italic;
     font-weight: 500;
+    margin-top: 0.65rem;
   }
 
   .flex {
@@ -188,14 +190,24 @@
   }
 }
 
+.section-videos {
+  .below-title {
+    margin-top: 0.325rem;
+  }
+
+  .title {
+    color: var(--clr-white);
+  }
+}
+
 footer {
   padding: 2.75vh 0;
   text-align: center;
-  background-color: var(--clr-accent);
+  background-color: var(--clr-main);
 
   p {
     font-size: var(--fs-400);
-    color: var(--clr-white);
+    color: var(--clr-black);
   }
 }
 
@@ -219,6 +231,7 @@ footer {
 }
 
 @media screen and (min-width: 56.25rem) {
+  .section-testimonials,
   .section-videos {
     .flex {
       flex-direction: row;
