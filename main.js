@@ -163,9 +163,10 @@ function runOnStart() {
           modal.classList.add("is-hidden")
 
           // Event snippet for Envio de formulário conversion page
-          // gtag("event", "conversion", {
-          //   send_to: "AW-336630608/NBHVCLLy59QCENCmwqAB",
-          // })
+          gtag("event", "conversion", {
+            send_to: "AW-10814671575/nhbdCJjQ6YUDENeV66Qo",
+          })
+
           return true
         } else {
           e.preventDefault()
@@ -203,6 +204,18 @@ function runOnStart() {
     // FORM
   }, 250)
 }
+
+/**
+ * Animation on scroll
+ */
+window.addEventListener("load", () => {
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+    mirror: false,
+  })
+})
 
 if (document.readyState !== "loading") {
   runOnStart()
